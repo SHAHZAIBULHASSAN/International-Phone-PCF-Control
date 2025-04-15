@@ -1,0 +1,145 @@
+/* ========= Modal Container ========= */
+.country-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease forwards;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.country-modal.show {
+    display: block;
+}
+
+/* ========= Overlay ========= */
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(2px);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* ========= Modal Content ========= */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    max-height: 70vh;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    animation: slideUp 0.4s ease forwards;
+    transition: all 0.3s ease;
+}
+
+/* ========= List Items ========= */
+.modal-country-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+    margin-bottom: 6px;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.modal-country-option:hover {
+    background-color: #dcefff;
+    transform: scale(1.02);
+}
+
+/* ========= Flag & Text ========= */
+.dropdown-flag,
+.flag-icon {
+    width: 28px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+.dropdown-text {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* ========= Toggle Button ========= */
+.modal-toggle-button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: transform 0.2s ease;
+}
+.modal-toggle-button:hover {
+    transform: rotate(15deg);
+}
+
+/* ========= Selected Display ========= */
+.selected-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+}
+
+.code-text {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ========= Input Field ========= */
+.phone-number-input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* ========= Control Container ========= */
+.phone-input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-row-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ========= Animations ========= */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 20%) scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
